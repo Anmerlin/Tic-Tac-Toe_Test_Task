@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ticTacToe">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-mocks.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="listCtrl">
+        <div class="header">
+            <h3>Tic Tac Toe</h3>
+        </div>
+        <div class="content">
+            <div class="gamers">
+                List of the games:
+            </div>
+            <div class="set">
+                <div class="set-box set-wait" ng-repeat="list in games | filter:'ready' as result" ng-click='toggleModal()'>
+                    <div class="set-box_user-first">{{list.owner}}</div>
+                    <div class="set-box_user-second">{{list.opponent}}</div>
+                    <div class="set-box_time">{{list.gameDuration | formatDuration}}</div>
+                </div>
+                <div class="set-box set-run" ng-repeat="list in games | filter:'playing' as result" ng-click>
+                    <div class="set-box_user-first line">{{list.owner}}</div>
+                    <div class="set-box_user-second">{{list.opponent}}</div>
+                    <div class="set-box_time">{{list.gameDuration | formatDuration}}</div>
+                </div>
+                <div class="set-box set-over" ng-repeat="list in games | filter:'done' as result">
+                    <div class="set-box_user-first line-over" ng-class="{win:'{{list.gameResult}}'=='owner'}">{{list.owner}}</div>
+                    <div class="set-box_user-second" ng-class="{win:'{{list.gameResult}}'=='opponent'}">{{list.opponent}}</div>
+                    <div class="set-box_time">{{list.gameDuration | formatDuration}}</div>
+                </div>
+            </div>
+        </div>
+        <footer class="create-game">
+            <div class="new-gamer" ng-click='toggleModal()'>+</div>
+        </footer>
+        <modal-dialog show='modalShown'>
+            <form novalidate class="modal-form">
+                <label class="moda-form_label">Enter your name to create the game:</label>
+                <input type="text" ng-model="user.name" class="modal-form__field" placeholder="for example: Stiven Sigal">
+                <div>
+                    <input type="button" ng-click="reset()" value="Reset" class="modal-form_button">
+                    <input type="submit" ng-click="update(user)" value="Enter" class="modal-form_button">
+                </div>
+            </form>
+        </modal-dialog>
+    </div>
+
+</body>
+
+</html>

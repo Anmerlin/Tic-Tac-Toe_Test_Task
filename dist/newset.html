@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ticTacToe">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-mocks.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="listCtrl">
+        <div class="header">
+            <h3>Tic Tac Toe</h3>
+        </div>
+        <div class="content">
+            <div class="gamers-set">
+                <div class="gamer-one">
+                    <span ng-class="{true:'gamer-line-step', false:'cross'}[moves % 2 !== 0]" class="cross">Chuck Norris <i class='fa fa-times' aria-hidden='true'></i></span>
+                </div>
+                <div class="gamer-win">
+                    <h4 ng-show="gameover == true"><div>Game over!</div><div>Winner:{{winner}}</div></h4>
+                </div>
+                <div class="gamer-two">
+                    <span ng-class="{true:'gamer-line-step', false:'cross'}[moves % 2 == 0]" class="cross"><i class="fa fa-circle-o" aria-hidden="true"></i>Jerry Berry</span>
+                </div>
+            </div>
+            <div class="set-field-run">
+                <div class="set-field">
+                    <div class="set-col">
+                        <div class="set-field-cell" ng-repeat="cell in cells track by $index" ng-click="fillCell($index)">{{cells[$index]}}</div>
+                    </div>
+
+                </div>
+                <div class="set-time">
+                    {{counter}}
+                </div>
+                <div class="set-button" >surrender</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+*
+  margin: 0
+  padding: 0
+
+body
+  background-color: #eeeeee
+
+.container
+  width: 534px
+  margin: 0 auto
+
+.header
+  background-color: #000
+  color: #fff
+  height: 58px
+  box-shadow: 0 6px 5px -2px rgba(0, 0, 0, 0.5)
+  display: flex
+  align-items: center
+  padding-left: 22px
+
+.content
+  margin: 0 24px 0
+
+.gamers
+  height: 48px
+  width: 60%
+  border-bottom: 1px solid #d1d1d1
+  display: flex
+  align-items: center
+  font-weight: bold
+
+.set
+  margin-top: 18px
+  display: flex
+  flex-wrap: wrap
+  margin-right: -8px
+  height: 100%
+  box-sizing: content-box
+
+.set-box
+  width: 115px
+  height: 115px
+  margin-bottom: 8px
+  margin-right: 8px
+  box-sizing: content-box
+
+.set-wait
+  background-color: #828282
+  color: #fff
+  cursor: pointer
+
+.set-run
+  background-color: #bdbdbd
+  color: #fff
+  cursor: pointer
+
+.set-over
+  background-color: #e0e0e0
+
+.set-box_user-first
+  height: 44px
+  margin-left: 10px
+  margin-right: 8px
+  padding-top: 8px
+  font-size: 16px
+  word-wrap: normal
+  display: flex
+  align-items: flex-start
+  font-family: Arial
+  box-sizing: content-box
+
+.set-box_user-second
+  @extend .set-box_user-first
+  padding-top: 0
+  height: 40px
+  padding-top: 6px
+
+.set-box_time
+  color: #4f4f4f
+  height: 16px
+  font-size: 12px
+  margin-right: 2px
+  display: flex
+  justify-content: flex-end
+
+.create-game
+  display: flex
+  justify-content: flex-end
+  margin: 0 24px 0
+
+.new-gamer
+  width: 56px
+  height: 56px
+  border-radius: 100%
+  background-color: #009688
+  color: #fff
+  font-size: 28px
+  font-weight: bold
+  display: flex
+  justify-content: center
+  align-items: center
+  box-shadow: 0 6px 11px -2px rgba(0, 0, 0, 0.5)
+  cursor: pointer
+
+.line
+  border-bottom: 1px solid #828282
+
+.line-over
+  border-bottom: 1px solid #BDBDBD
+
+.win
+  color: #f2994a
+  &:after
+    content: "\2714"
+    margin-top: -3px
+    margin-left: 1px
+
+.gamers-set
+  display: flex
+  justify-content: space-between
+  width: 100%
+  height: 48px
+  font-size: 16px
+
+.gamer-one,
+.gamer-two,
+.gamer-win
+  display: flex
+  align-items: center
+
+.gamer-line-step
+    border-bottom: 1px solid #000
+    color: #2d9cdb
+
+.set-field
+  display: flex
+  justify-content: center
+
+.set-col
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-content: flex-start
+  width: 70%
+
+.set-field-cell
+  width: 88px
+  height: 88px
+  border: 5px solid #bdbdbd
+  font-size: 80px
+  font-weight: bold
+  cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
+  font-family: 'Arial'
+
+.set-field-cell_view
+  border-right: 5px solid #e0e0e0
+  border-bottom: 5px solid #e0e0e0
+  cursor: default
+
+.set-field-run
+  margin-top: 18px
+  display: flex
+  flex-wrap: wrap
+  margin-right: -8px
+  height: 100%
+  flex-direction: column
+  align-items: center
+
+.nil
+  color: #2d9cdb
+
+.set-time
+  margin-top: 45px
+  height: 20px
+  font-size: 25px
+  color: #bdbdbd
+
+.set-button
+  color: #fff
+  width: 136px
+  height: 37px
+  background-color: #009688
+  box-shadow: 0 5px 3px -2px rgba(0, 0, 0, 0.3)
+  border-radius: 1px
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  margin-top: 35px
+  font-size: 14px
+  text-transform: uppercase
+
+.cross, .nil_view, .gamer-one_view
+  color: #bdbdbd
+  border-bottom: none
+
+.gamer-two_view
+  border-bottom: 1px solid #bdbdbd
+
+.modal-overlay
+    position: absolute
+    z-index: 9999
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #000
+    opacity: 0.8
+
+.modal-dialog
+    z-index: 10000
+    position: absolute
+    width: 50%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    -webkit-transform: translate(-50%, -50%)
+    -moz-transform: translate(-50%, -50%)
+    background-color: #fff
+    box-shadow: 4px 4px 80px #000
+    border-radius: 5px
+    width: 300px
+    height: 150px
+
+.modal-dialog-content
+    padding: 10px
+    height: 100px
+
+.modal-close
+    position: absolute
+    top: 3px
+    right: 5px
+    padding: 5px
+    cursor: pointer
+    font-size: 120%
+    display: inline-block
+    font-weight: bold
+    font-family: 'arial', 'sans-serif'
+
+.modal-form
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    height: 100%
+    margin-top: 25px
+
+.moda-form_label
+    font-size: 16px
+    font-weight: bold
+
+.modal-form__field
+    width: 250px
+    height: 25px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+
+.modal-form_button
+    width: 100px
+    height: 30px
+    cursor: pointer
